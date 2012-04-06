@@ -23,7 +23,7 @@ var map = function () {
         // Keep the reference to the map object;
         self.map = res.map;
         // Map is being shown, lets populate it with data points
-        self.populateMap(lat, lon);
+        //self.populateMap(lat, lon);
       }, function (error) {
         // something seriously wrong here. Show error
         alert(error);
