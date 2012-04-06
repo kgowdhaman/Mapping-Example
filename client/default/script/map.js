@@ -1,11 +1,18 @@
+var lat = 12.95312,
+          lon = 77.699239; // Location of Moneygall, Co. Offaly
 var map = function () {
   var self = {
     
     // Show the map on screen
     show: function () {
-      var lat = 52.88,
-          lon = -7.96; // Location of Moneygall, Co. Offaly
-          
+      
+       $fh.geo( {interval:5000}, function(geoRes){
+        // result contains Location of Deloitte USI Bangalore (Bengaluru), Karnataka, India
+        // geo fix 77.699239 12.95312 (Longitude,Latitude of Bengaluru)
+       lat = geoRes.lat;
+       lon = geoRes.lon;
+      } );   
+	  
       //Pass lat & lon into map api, initialising map at that point
       $fh.map({
         target: document.getElementById('maps_div'),
